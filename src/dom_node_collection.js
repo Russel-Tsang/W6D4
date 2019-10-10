@@ -1,18 +1,17 @@
 class DOMNodeCollection {
   constructor (array) {
     this.array = array;
-
   }
 
-  children () {
+  children() {
     let nursery = [];
-    this.array.forEach( (el) => {
-      Array.from(el.children).forEach( child => nursery.push(child));
+    this.array.forEach(el => {
+      Array.from(el.children).forEach(child => nursery.push(child));
     });
     return new DOMNodeCollection(nursery);
   }
 
-  parent () {
+  parent() {
     let parents = [];
     this.array.forEach( (el) => {
       if (!parents.includes(el.parentElement)) parents.push(el.parentElement);
@@ -21,7 +20,7 @@ class DOMNodeCollection {
     return new DOMNodeCollection(parents);
   }
 
-  find (ele) {
+  find(ele) {
     let selected = [];
     this.array.forEach((el) => {
       Array.from(el.querySelectorAll(ele)).forEach( (found) => {
@@ -34,7 +33,7 @@ class DOMNodeCollection {
   }
 
 
-  html (string) {
+  html(string) {
     if (!string) {
       return this.array[0].innerHTML;
     } else {
