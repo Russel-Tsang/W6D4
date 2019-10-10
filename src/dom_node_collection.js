@@ -82,19 +82,17 @@ class DOMNodeCollection {
   addClass(name) {
     this.collection.forEach(ele => {
       name = ele.className === '' ? name : ` ${name}`;
-      if (!ele.className.includes(name.slice(1))) ele.className += name;
+      if (!ele.className.split(' ').includes(name.slice(1))) ele.className += name;
     })
   }
 
-  removeClass(classesString) {
-    if (!classesString) {
-      this.collection.forEach( (el) => {
-        el.className = '';
-      });
+  removeClass(name) {
+    if (!name) {
+      this.collection.forEach(el => el.className = '');
     } else {
-      let classesArr = classesString.split(" ");
-      this.collection.forEach( (el) => {
-        el.className = el.className.split(" ").filter( name => !classesArr.includes(name) ).join(" "); 
+      let classesArr = name.split(" ");
+      this.collection.forEach(el => {
+        el.className = el.className.split(" ").filter(name => !classesArr.includes(name)).join(" "); 
       });
     }
   }
