@@ -1,0 +1,33 @@
+.green {
+    color: green;
+}
+
+.large {
+    font-size: 60px;
+}
+
+a {
+    font-size: 30px;
+    margin-right: 40px;
+}
+
+.flex {
+    display: flex;
+}
+
+.methods-list > li {
+    list-style: none;
+}
+
+ul {
+    margin-bottom: 10px;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+}
+
+table {
+    width: 1000px;
+}
