@@ -89,6 +89,17 @@
           </td>
         </tr>
     </table>
+    <p>JQuery-style ajax call using JavaScript XHR object:</p>
+    <p>$l.ajax({
+    <br>type: 'GET',
+    <br>url: "https://jsonplaceholder.typicode.com/todos/1",
+    <br>success(data) {
+    console.log(data);
+    },
+    <br>error() {
+    console.error("An error occurred.");
+    },
+    <br>});</p>
   </fieldset>
 
   <div class='flex'>
