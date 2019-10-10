@@ -54,14 +54,12 @@ class DOMNodeCollection {
 
   on(action, callback) {
     window.callback = callback;
-    this.collection.forEach(ele => ele.addEventListener(`${action}`, this.callback));
+    this.collection.forEach(ele => ele.addEventListener(`${action}`, window.callback));
   }
 
   off(action) {
-    debugger
-    let self = this;
     this.collection.forEach(ele => ele.removeEventListener(`${action}`, window.callback));
-    this.callback = null;
+    window.callback = undefined;
   }
 
   append(arg) {
