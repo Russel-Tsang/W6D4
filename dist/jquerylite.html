@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel='stylesheet' type="text/css" href='./jquerylite.css'/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./main.js"></script>
+
+</head>
+<body>
+  <h1 class="heading">jQuery Lite</h1>
+  <fieldset style="width: 0px;">
+    <legend>Try the following jQuery Lite methods in the console!</legend>
+      <table border="1px black">
+        <tr>
+          <td>
+            children
+            <br><br>
+            $l('table').children()
+          </td>
+          <td>
+            parent
+            <br><br>
+            $l('tbody').parent()
+          </td>
+          <td>
+            find
+            <br><br>
+            $l('table').find('td')
+          </td>
+        </tr>
+        <tr>
+          <td>
+            html
+            <br><br>
+            $l('.heading').html()
+            <br>
+            OR
+            <br>
+            $l('.heading').html('New HTML')
+          </td>
+          <td>
+            empty
+            <br><br>  
+            $l('.heading').empty()
+          </td>
+          <td>
+            append
+            <br><br>
+            $l('body').append($l('&lt;h2&gt;APPENDED&lt;/h2&gt;'))
+          </td>
+        </tr>
+        <tr>
+          <td>
+            on
+            <br><br>
+            $l('.heading').on('click', () => alert('clicked!'))
+          </td>
+          <td>
+            off
+            <br><br>
+            $l('.heading').off('click')
+          </td>
+          <td>
+            attr
+            <br><br>
+            $l('a').attr('href')
+            <br>
+            OR
+            <br>
+            $l('a').attr('href', 'https://github.com/Russel-Tsang/')
+          </td>
+        </tr>
+        <tr>
+          <td>
+            addClass
+            <br><br>
+            $l('.heading').addClass('green large')
+          </td>
+          <td>
+            removeClass
+            <br><br>
+            $l('.heading').removeClass('large')
+          </td>
+          <td>
+            remove
+            <br><br>
+            $l('fieldset').remove()
+          </td>
+        </tr>
+    </table>
+  </fieldset>
+
+  <div class='flex'>
+    <a href="https://russeltsang.com/about" target="blank">
+      About Me
+    </a>
+    <br>
+    <a href="https://russeltsang.com/projects/" target="blank">
+      My Projects
+    </a>
+  </div>
+</body>
+</html>
