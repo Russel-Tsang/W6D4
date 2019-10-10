@@ -38,3 +38,31 @@ window.$l.extend = function(...objs) {
   });
   return mergeObject;
 }
+
+window.$l.ajax = function(options) {
+  const defaultOptions = {
+    method: 'GET',
+    url: location.href,
+    success: (successResponse) => console.log(JSON.parse(successResponse)),
+    error: (errorResponse) => console.log(errorResponse),
+    data: {},
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+  }
+  // merge default options with provided options
+  options = $l.extend(defaultOptions, options);
+  options.method = options.method.toUpperCase();
+
+  const request = new XMLHttpRequest();
+
+  request.open(options.method, options.url, true);
+
+  request.onload = function () {
+    if (request.status === 200) {
+      options.success(JSON.parse(request.response));
+    } else {
+      options.error(request.response);
+    }
+  }
+
+  request.send(JSON.stringify(options.data));
+}
